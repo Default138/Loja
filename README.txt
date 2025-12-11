@@ -1,3 +1,5 @@
+ESTRUTURA
+
 AutoTech/
 ├── assets/
 │   ├── fonts/           # (mantido - mesma fonte ou novas)
