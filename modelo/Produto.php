@@ -88,4 +88,13 @@ class Produto{
     {
         return $this->id;
     }
+
+    /**
+     * Set the value of id
+     */
+    public function setId($id): self
+    {
+        $this->id = $id;
+        return $this;
+    }
 }
