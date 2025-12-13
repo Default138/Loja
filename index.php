@@ -22,6 +22,7 @@ $produtos = $ProdutoDao->listar();
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>
+<!-- /.ALERTA BLACK FRIDAY -->
 
 <section class="slideshow">
     <div class="container">
@@ -31,7 +32,7 @@ $produtos = $ProdutoDao->listar();
                     <img src="https://lipsum.app/1109x180" class="d-block w-100" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://lipsum.app/1109x180.jpg" class="d-block w-100" alt="">
+                    <img src="https://lipsum.app/1109x180/332211" class="d-block w-100" alt="">
                 </div>
             </div>
             <!-- /.carousel-inner -->
@@ -56,7 +57,7 @@ $produtos = $ProdutoDao->listar();
                 <img src="https://lipsum.app/541x105" class="d-block w-100" alt="">
             </div>
             <div class="col-md-6">
-                <img src="https://lipsum.app/541x105" class="d-block w-100" alt="">
+                <img src="https://lipsum.app/541x105/112233" class="d-block w-100" alt="">
             </div>
         </div>
     </div>
@@ -77,14 +78,11 @@ $produtos = $ProdutoDao->listar();
                 <!-- Produto -->
                 <div class="col-md-3 mb-4">
                     <div class="card card-produto rounded-0 border-0 h-100 position-relative">
-                        <!-- Badges para produto ID = 1 -->
-                        <?php if ($produto->getId() == 1): ?>
                             <div class="position-absolute top-0 end-0 mt-2 me-2">
                                 <span class="badge bg-warning text-dark rounded-pill fs-7 px-3 py-2">
                                     <i class="bi bi-lightning-fill me-1"></i> -30%
                                 </span>
                             </div>
-                        <?php endif; ?>
                         
                         <a href="produto.php?id=<?php echo $produto->getId(); ?>">
                             <img src="<?php echo htmlspecialchars($produto->getImagem()); ?>" 
@@ -99,8 +97,6 @@ $produtos = $ProdutoDao->listar();
                                 </a>
                             </h5>
                             <div class="mt-auto">
-                                <?php if ($produto->getId() == 1): ?>
-                                    <!-- Preço com desconto para produto ID = 1 -->
                                     <div class="d-flex align-items-center">
                                         <span class="text-danger fw-bold fs-5 me-2">
                                             R$ <?php 
@@ -117,12 +113,6 @@ $produtos = $ProdutoDao->listar();
                                     <small class="text-success">
                                         <i class="bi bi-truck"></i> Frete grátis
                                     </small>
-                                <?php else: ?>
-                                    <!-- Preço normal para outros produtos -->
-                                    <p class="card-text fw-bold fs-5">
-                                        R$ <?php echo number_format($produto->getPreco(), 2, ',', '.'); ?>
-                                    </p>
-                                <?php endif; ?>
                                 
                                 <!-- Badge de estoque limitado para produto ID = 1 -->
                                 <?php if ($produto->getId() == 1): ?>
@@ -136,7 +126,7 @@ $produtos = $ProdutoDao->listar();
                         </div>
                         
                         <!-- Badge exclusivo no rodapé do card -->
-                        <?php if ($produto->getId() == 1): ?>
+                        <?php if ($produto->getId() == 2): ?>
                             <div class="card-footer bg-light border-0">
                                 <small class="text-muted d-flex align-items-center">
                                     <i class="bi bi-award-fill text-warning me-2"></i>

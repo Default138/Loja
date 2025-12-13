@@ -26,14 +26,12 @@ $produto = $ProdutoDao->buscarPorId($id);
                 <img src="<?= $produto->getImagem() ?>" class="img-fluid rounded" alt="<?= $produto->getNome() ?>">
             </div>
 
-            <!-- Informações do Produto -->
+            <!-- Informacoes do Produto -->
             <div class="col-lg-6">
                 <h1 class="h2"><?= $produto->getNome() ?></h1>
 
-                <!-- Preço com condicional para desconto -->
                 <div class="preco-info mb-3">
-                    <?php if ($produto->getId() == 1): ?>
-                        <!-- Preço com desconto para produto ID = 1 -->
+                        <!-- Preço com desconto -->
                         <div class="d-flex align-items-center">
                             <span class="text-danger fw-bold fs-5 me-2">
                                 R$ <?php 
@@ -53,20 +51,17 @@ $produto = $ProdutoDao->buscarPorId($id);
                         </small>
                         <p class="text-primary mt-1">Em até 12x sem juros</p>
                         
-                        <!-- Badge de estoque limitado para produto ID = 1 -->
-                        <div class="mt-2">
-                            <span class="badge bg-info text-dark">
-                                <i class="bi bi-exclamation-triangle-fill me-1"></i> Últimas unidades
-                            </span>
-                        </div>
-                    <?php else: ?>
-                        <!-- Preço normal para outros produtos -->
-                        <h3 class="text-primary">R$ <?= number_format($produto->getPreco(), 2, ',', '.') ?></h3>
-                        <p class="text-success">Em até 12x sem juros</p>
+                        <!-- Badge de estoque limitado para produto ID = 2 -->
+                         <?php if ($produto->getId() == 2): ?>
+                            <div class="mt-2">
+                                <span class="badge bg-info text-dark">
+                                    <i class="bi bi-exclamation-triangle-fill me-1"></i> Últimas unidades
+                                </span>
+                            </div>
                     <?php endif; ?>
                 </div>
 
-                <!-- Formulário de Compra -->
+                <!-- Formulario de Compra -->
                 <form action="carrinho.php" method="POST" class="comprar-form">
                     <input type="hidden" name="produto_id" value="<?= $produto->getId() ?>"> 
                     
@@ -97,7 +92,7 @@ $produto = $ProdutoDao->buscarPorId($id);
                 </form>
 
                 <!-- Badge exclusivo Black Friday para produto ID = 1 -->
-                <?php if ($produto->getId() == 1): ?>
+                <?php if ($produto->getId() == 2): ?>
                     <div class="mt-3">
                         <div class="card border-warning">
                             <div class="card-body bg-warning bg-opacity-10">
@@ -113,7 +108,7 @@ $produto = $ProdutoDao->buscarPorId($id);
                     </div>
                 <?php endif; ?>
 
-                <!-- Informações Adicionais -->
+                <!-- Informacoes Adicionais -->
                 <div class="mt-4">
                     <div class="d-flex gap-4 text-center">
                         <div>

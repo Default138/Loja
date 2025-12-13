@@ -1,4 +1,10 @@
-<?php require __DIR__ . "/assets/elements/header.php"; ?>
+<?php 
+require __DIR__ . "/assets/elements/header.php"; 
+require_once ("DAO/ProdutoDao.php");
+
+$ProdutoDao = new ProdutoDao;
+$produtos = $ProdutoDao->listar();
+?>
 
 <main class="produtos-lista">
     <div class="container py-5">
@@ -40,36 +46,20 @@
             <!-- Lista de Produtos -->
             <div class="col-lg-9">
                 <div class="row">
-                    <?php
-                    $produtos = [
-                        ['nome' => 'Cropped Rosa', 'preco' => 59.90, 'imagem' => 'https://lipsum.app/253x323', 'avaliacao' => 3],
-                        ['nome' => 'Camiseta Manga Comprida', 'preco' => 79.90, 'imagem' => 'https://lipsum.app/253x323', 'avaliacao' => 4],
-                        ['nome' => 'Saia Plissada', 'preco' => 89.90, 'imagem' => 'https://lipsum.app/253x323', 'avaliacao' => 5],
-                        ['nome' => 'Camiseta Listrada', 'preco' => 69.90, 'imagem' => 'https://lipsum.app/253x323', 'avaliacao' => 4]
-                    ];
-                    ?>
-
                     <?php foreach($produtos as $produto): ?>
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100 produto-card">
-                            <img src="<?= $produto['imagem'] ?>" class="card-img-top" alt="<?= $produto['nome'] ?>">
+                            <img src="<?= $produto->getImagem() ?>" class="card-img-top" alt="<?= $produto->getNome() ?>">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><?= $produto['nome'] ?></h5>
-                                
-                                <!-- Avaliação -->
-                                <div class="rating mb-2">
-                                    <?php for($i = 0; $i < 5; $i++): ?>
-                                        <i class="bi bi-star-fill <?= $i < $produto['avaliacao'] ? 'text-warning' : 'text-secondary' ?>"></i>
-                                    <?php endfor; ?>
-                                </div>
+                                <h5 class="card-title"><?= $produto->getNome() ?></h5>
 
                                 <!-- Preço -->
                                 <p class="card-text price h5 text-primary mb-3">
-                                    R$ <?= number_format($produto['preco'], 2, ',', '.') ?>
+                                    R$ <?= number_format($produto->getPreco(), 2, ',', '.') ?>
                                 </p>
 
                                 <!-- Botão -->
-                                <a href="produto.php" class="btn btn-outline-primary mt-auto">Ver Detalhes</a>
+                                <a href="produto.php?id=<?php echo $produto->getId()?>" class="btn btn-outline-primary mt-auto">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>

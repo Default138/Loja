@@ -6,7 +6,7 @@
                 <h5 class="text-primary">Atendimento</h5>
                 <ul class="list-unstyled">
                     <li><i class="bi bi-telephone"></i> (11) 9999-9999</li>
-                    <li><i class="bi bi-envelope"></i> contato@modadamulher.com</li>
+                    <li><i class="bi bi-envelope"></i> contato@lipsum.com</li>
                     <li><i class="bi bi-clock"></i> Segunda a sexta: 09h às 17h</li>
                 </ul>
             </div>

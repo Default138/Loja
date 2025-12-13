@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="https://lipsum.app/16x16" type="image/png">
-  <title>Moda da Mulher</title>
+  <title>Lipsum</title>
   
   <!-- Bootstrap + Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
         <!-- Logo -->
         <div class="col-lg-2 text-center text-lg-start">
           <a href="index.php">
-            <img src="https://lipsum.app/148x54" alt="Moda da Mulher" class="logo">
+            <img src="https://lipsum.app/148x54" alt="Lipsum" class="logo">
           </a>
         </div>
 
@@ -71,19 +71,19 @@
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Moda Feminina
+              Lipsum
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="produtos.php?categoria=lancamentos">Lançamentos</a></li>
-              <li><a class="dropdown-item" href="produtos.php?categoria=casual">Moda Casual</a></li>
-              <li><a class="dropdown-item" href="produtos.php?categoria=praia">Moda Praia</a></li>
+              <li><a class="dropdown-item" href="produtos.php?categoria=classico">Classico</a></li>
+              <li><a class="dropdown-item" href="produtos.php?categoria=coloridos">Coloridos</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="produtos.php?categoria=calcados">Calçados</a>
+            <a class="nav-link" href="produtos.php?categoria=textoColorido">Texto Colorido</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="produtos.php?categoria=acessorios">Acessórios</a>
+            <a class="nav-link" href="produtos.php?categoria=imagens">Imagens</a>
           </li>
         </ul>
       </div>
